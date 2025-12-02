@@ -1,12 +1,13 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// ⚠️ Tu repo en GitHub se llama "web"
-// por eso el base tiene que ser "/web/" 
+// ⚠️ Repo en GitHub: canaria-graphite-impact-main
+// URL de Pages (sin dominio propio):
+// https://canariamedia.github.io/canaria-graphite-impact-main/
+
 export default defineConfig({
   plugins: [react()],
-  base: "/web/",
-
+  base: "/canaria-graphite-impact-main/",
   build: {
     outDir: "dist",
   },
