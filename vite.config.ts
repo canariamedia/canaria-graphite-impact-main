@@ -9,9 +9,11 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
-  // Como tu página se sirve en https://canariamedia.github.io/
-  // la base tiene que ser la raíz:
-  base: "/",
+
+  // IMPORTANTE: tu sitio vive en un subpath,
+  // entonces Vite debe generar URLs con ese prefijo
+  base: "/canaria-graphite-impact-main/",
+
   build: {
     outDir: "dist",
   },
