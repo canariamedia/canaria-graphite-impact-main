@@ -9,7 +9,7 @@ const BasquetbolSection = () => {
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${basquetHero})` }}
       >
-        <div className="absolute inset-0 bg-background/60 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-background/80 backdrop-blur-[2px]" />
       </div>
 
       {/* Content */}
@@ -24,7 +24,7 @@ const BasquetbolSection = () => {
         {/* Two Columns */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {/* Jugadores */}
-          <div className="bg-background/80 backdrop-blur-sm border border-border/50 p-8">
+          <div className="bg-background/80 backdrop-blur-sm border border-border/50 p-8 rounded-xl transition-all duration-300 hover:shadow-xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/50">
             <h3 className="text-2xl font-bold mb-4 text-foreground">Jugadores</h3>
             <p className="text-muted-foreground leading-relaxed mb-6">
               Si jugás con todo, tu imagen también tiene que ir con todo. Hacemos diseños que capturan esa intensidad: antes del partido, después con tus números, y en cada momento que importa.
@@ -35,7 +35,7 @@ const BasquetbolSection = () => {
           </div>
 
           {/* Representantes */}
-          <div className="bg-background/80 backdrop-blur-sm border border-border/50 p-8">
+          <div className="bg-background/80 backdrop-blur-sm border border-border/50 p-8 rounded-xl transition-all duration-300 hover:shadow-xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/50">
             <h3 className="text-2xl font-bold mb-4 text-foreground">Representantes</h3>
             <p className="text-muted-foreground leading-relaxed mb-6">
               Si manejás varios jugadores, necesitás que se vea orden y profesionalismo. Nosotros armamos esa coherencia visual que hace que tu trabajo se note.

@@ -10,7 +10,7 @@ const Differencial = () => {
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="border border-border/50 bg-background/40 backdrop-blur-sm p-8 fade-in-up">
+          <div className="border border-border/50 bg-background/40 backdrop-blur-sm p-8 rounded-xl fade-in-up transition-all duration-300 hover:shadow-xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/50">
             <div className="text-5xl mb-6">⚡</div>
             <h3 className="text-2xl font-bold mb-4">Pre-partido (Matchday)</h3>
             <p className="text-muted-foreground leading-relaxed">
@@ -18,7 +18,7 @@ const Differencial = () => {
             </p>
           </div>
           
-          <div className="border border-border/50 bg-background/40 backdrop-blur-sm p-8 fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <div className="border border-border/50 bg-background/40 backdrop-blur-sm p-8 rounded-xl fade-in-up transition-all duration-300 hover:shadow-xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/50" style={{ animationDelay: '0.2s' }}>
             <div className="text-5xl mb-6">📊</div>
             <h3 className="text-2xl font-bold mb-4">Post-partido (Estadísticas)</h3>
             <p className="text-muted-foreground leading-relaxed">
@@ -28,7 +28,7 @@ const Differencial = () => {
         </div>
 
         <p className="text-center text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed mt-12">
-          Funciona igual en fútbol y básquetbol. Si querés que se note que trabajás en serio, no solo que existís, esto es para vos.
+          Si querés que se note que trabajás en serio, no solo que existís, esto es para vos.
         </p>
       </div>
     </section>

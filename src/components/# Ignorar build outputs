@@ -1,0 +1,6 @@
+# Ignorar build outputs
+build/
+.next/
+
+# PERMITIR dist/ para producción
+!dist/

@@ -9,7 +9,7 @@ const FutbolSection = () => {
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${futbolHero})` }}
       >
-        <div className="absolute inset-0 bg-background/60 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-background/80 backdrop-blur-[2px]" />
       </div>
 
       {/* Content */}
@@ -24,7 +24,7 @@ const FutbolSection = () => {
         {/* Two Columns */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {/* Jugadores */}
-          <div className="bg-background/80 backdrop-blur-sm border border-border/50 p-8">
+          <div className="bg-background/80 backdrop-blur-sm border border-border/50 p-8 rounded-xl transition-all duration-300 hover:shadow-xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/50">
             <h3 className="text-2xl font-bold mb-4 text-foreground">Jugadores</h3>
             <p className="text-muted-foreground leading-relaxed mb-6">
               Cada partido es una oportunidad. Creamos diseños pre y post partido que muestran tu nivel real, con estadísticas que respaldan lo que hacés en la cancha.
@@ -35,7 +35,7 @@ const FutbolSection = () => {
           </div>
 
           {/* Representantes */}
-          <div className="bg-background/80 backdrop-blur-sm border border-border/50 p-8">
+          <div className="bg-background/80 backdrop-blur-sm border border-border/50 p-8 rounded-xl transition-all duration-300 hover:shadow-xl hover:shadow-accent/10 hover:scale-[1.02] hover:border-accent/50">
             <h3 className="text-2xl font-bold mb-4 text-foreground">Representantes</h3>
             <p className="text-muted-foreground leading-relaxed mb-6">
               Cuando tus jugadores se ven profesionales, vos también. Diseñamos contenido coherente que demuestra que hay estructura y trabajo serio detrás.

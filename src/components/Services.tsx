@@ -56,10 +56,10 @@ const Services = () => {
         
         <div className="space-y-6">
           {services.map((service) => (
-            <div key={service.id} className="border border-border/50 overflow-hidden">
+            <div key={service.id} className="border border-border/50 overflow-hidden rounded-xl">
               <button
                 onClick={() => toggleService(service.id)}
-                className="w-full p-8 text-left bg-secondary/20 hover:bg-secondary/30 transition-all duration-300 flex items-center justify-between"
+                className="w-full p-8 text-left bg-secondary/20 hover:bg-secondary/30 transition-all duration-300 flex items-center justify-between hover:scale-[1.01] active:scale-[0.99]"
               >
                 <h3 className="text-3xl font-bold">{service.title}</h3>
                 <ChevronDown 
@@ -73,7 +73,7 @@ const Services = () => {
                 expandedService === service.id ? 'block' : 'hidden'
               }`}>
                 {service.subcards.map((subcard, index) => (
-                  <div key={index} className="border border-border/50 p-6 bg-card/30">
+                  <div key={index} className="border border-border/50 p-6 bg-card/30 rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
                     <h4 className="text-xl font-bold mb-3">{subcard.title}</h4>
                     <p className="text-muted-foreground mb-6 leading-relaxed">
                       {subcard.description}
