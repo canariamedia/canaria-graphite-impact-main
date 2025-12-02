@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Header from "@/components/Header";
+import Header from "../components/Header";// o "../components/Header";
+// o "./components/Header";
 import Footer from "@/components/Footer";
 import SocialFloat from "@/components/SocialFloat";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
