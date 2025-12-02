@@ -9,8 +9,9 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
-  // MUY IMPORTANTE → ESTA URL DEBE COINCIDIR CON LA DE GITHUB PAGES
-  base: "/canaria-graphite-impact-main/",
+  // Como tu página se sirve en https://canariamedia.github.io/
+  // la base tiene que ser la raíz:
+  base: "/",
   build: {
     outDir: "dist",
   },
