@@ -12,8 +12,7 @@ export default defineConfig({
 
   // IMPORTANTE: tu sitio vive en un subpath,
   // entonces Vite debe generar URLs con ese prefijo
-  base: "/canaria-graphite-impact-main/",
-
+base: "/",
   build: {
     outDir: "dist",
   },
