@@ -72,6 +72,8 @@ export type PortfolioItem = {
   context: string;
   categorias: CategoriaPortfolio[];
   formato: FormatoImagen;
+  /** Fecha u hora del partido según el diseño (ISO 8601). Solo usada para ordenar la sección Agentes & Agencias (más reciente primero). */
+  fechaOrdenAgentes?: string;
 };
 
 /** Borrador de item: admite `categorias` para forzar sección sin depender del índice */
@@ -450,7 +452,7 @@ const portfolioItemsBase: PortfolioItemDraft[] = [
     context: "Banfield vs Unión · Liga Profesional Argentina",
     formato: "9:16",
   },
-  // Matchdays Nuevo Fútbol Uruguay — Agencias y Representantes
+  // Matchdays Nuevo Fútbol Uruguay — Agencias y Representantes (fechaOrdenAgentes = fecha/hora del flyer)
   {
     id: "p46",
     image: nfuWanderersDepMaldonado,
@@ -459,6 +461,7 @@ const portfolioItemsBase: PortfolioItemDraft[] = [
     context: "Matchday para Nuevo Fútbol Uruguay",
     formato: "9:16",
     categorias: ["agentes"],
+    fechaOrdenAgentes: "2026-03-28T20:00:00", // diseño “HOY // 20:00” (misma jornada que otros 28/03; hora posterior a 18:00)
   },
   {
     id: "p47",
@@ -468,6 +471,7 @@ const portfolioItemsBase: PortfolioItemDraft[] = [
     context: "Matchday para Nuevo Fútbol Uruguay",
     formato: "9:16",
     categorias: ["agentes"],
+    fechaOrdenAgentes: "2026-03-22T16:30:00",
   },
   {
     id: "p48",
@@ -477,6 +481,7 @@ const portfolioItemsBase: PortfolioItemDraft[] = [
     context: "Matchday para Nuevo Fútbol Uruguay",
     formato: "9:16",
     categorias: ["agentes"],
+    fechaOrdenAgentes: "2026-03-27T18:30:00",
   },
   {
     id: "p49",
@@ -486,6 +491,7 @@ const portfolioItemsBase: PortfolioItemDraft[] = [
     context: "Matchday para Nuevo Fútbol Uruguay",
     formato: "9:16",
     categorias: ["agentes"],
+    fechaOrdenAgentes: "2026-02-21T17:00:00",
   },
   {
     id: "p50",
@@ -495,6 +501,7 @@ const portfolioItemsBase: PortfolioItemDraft[] = [
     context: "Matchday para Nuevo Fútbol Uruguay",
     formato: "9:16",
     categorias: ["agentes"],
+    fechaOrdenAgentes: "2026-03-07T17:00:00",
   },
   {
     id: "p51",
@@ -504,6 +511,7 @@ const portfolioItemsBase: PortfolioItemDraft[] = [
     context: "Matchday para Nuevo Fútbol Uruguay",
     formato: "9:16",
     categorias: ["agentes"],
+    fechaOrdenAgentes: "2026-03-22T18:00:00",
   },
   {
     id: "p52",
@@ -513,6 +521,7 @@ const portfolioItemsBase: PortfolioItemDraft[] = [
     context: "Matchday para Nuevo Fútbol Uruguay",
     formato: "9:16",
     categorias: ["agentes"],
+    fechaOrdenAgentes: "2026-03-28T18:00:00",
   },
   {
     id: "p53",
@@ -522,6 +531,7 @@ const portfolioItemsBase: PortfolioItemDraft[] = [
     context: "Matchday para Nuevo Fútbol Uruguay",
     formato: "9:16",
     categorias: ["agentes"],
+    fechaOrdenAgentes: "2026-02-28T17:00:00",
   },
   {
     id: "p54",
@@ -531,6 +541,7 @@ const portfolioItemsBase: PortfolioItemDraft[] = [
     context: "Matchday para Nuevo Fútbol Uruguay",
     formato: "9:16",
     categorias: ["agentes"],
+    fechaOrdenAgentes: "2026-03-13T18:00:00",
   },
   {
     id: "p55",
@@ -540,6 +551,7 @@ const portfolioItemsBase: PortfolioItemDraft[] = [
     context: "Matchday para Nuevo Fútbol Uruguay",
     formato: "9:16",
     categorias: ["agentes"],
+    fechaOrdenAgentes: "2026-03-14T20:30:00",
   },
   {
     id: "p56",
@@ -549,6 +561,7 @@ const portfolioItemsBase: PortfolioItemDraft[] = [
     context: "Matchday para Nuevo Fútbol Uruguay",
     formato: "9:16",
     categorias: ["agentes"],
+    fechaOrdenAgentes: "2026-03-22T10:00:00",
   },
   {
     id: "p57",
@@ -558,6 +571,7 @@ const portfolioItemsBase: PortfolioItemDraft[] = [
     context: "Matchday para Nuevo Fútbol Uruguay",
     formato: "9:16",
     categorias: ["agentes"],
+    fechaOrdenAgentes: "2026-03-22T16:00:00",
   },
 ];
 
@@ -684,12 +698,31 @@ export const agregarItemsAlPortfolio = (
 };
 
 /**
+ * Orden para Agentes & Agencias: más reciente primero (fecha/hora del diseño).
+ * Items sin `fechaOrdenAgentes` quedan al final, ordenados por `id`.
+ */
+function ordenarAgentesPorFechaReciente(items: PortfolioItem[]): PortfolioItem[] {
+  return [...items].sort((a, b) => {
+    const fa = a.fechaOrdenAgentes;
+    const fb = b.fechaOrdenAgentes;
+    if (fa && fb) return fb.localeCompare(fa);
+    if (fa && !fb) return -1;
+    if (!fa && fb) return 1;
+    return a.id.localeCompare(b.id);
+  });
+}
+
+/**
  * Obtener items filtrados por categoría
  */
 export const obtenerItemsPorCategoria = (
   categoria: CategoriaPortfolio
 ): PortfolioItem[] => {
-  return portfolioItems.filter((item) => item.categorias.includes(categoria));
+  const items = portfolioItems.filter((item) => item.categorias.includes(categoria));
+  if (categoria === "agentes") {
+    return ordenarAgentesPorFechaReciente(items);
+  }
+  return items;
 };
 
 /**
