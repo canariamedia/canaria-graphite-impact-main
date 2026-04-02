@@ -49,6 +49,9 @@ import alanizVsGuarani19Feb from "@/assets/AlanizvsGuarani-49b1a7c5-ddd0-4b26-b3
 import alanizVsBostonRiver29Mar from "@/assets/Alaniz-vs-Boston-River-9e0dbff9-5340-426c-9ac9-7b3b1a17e244.png";
 import alanizVsAlbion22Mar from "@/assets/Alaniz-vs-Albion-a2be3364-67cf-4d78-903e-42663252a6a8.png";
 import alanizVsGuarani26Feb from "@/assets/Alaniz-vs-Guarani-2cf90c17-cef8-47f3-80ac-40efa4ea4772.png";
+// Matchdays 2026 para Agustín Fernández (Futbolistas)
+import fernandezVsLiverpool from "@/assets/Fernandez-vs-Liverpool-d133d88c-030d-4968-9e93-ff37f279f78b.png";
+import fernandezVsWanderers from "@/assets/Fernandez-vs-Wanderers-1baac29a-594d-4d20-b63b-d4c2092343a0.png";
 // Matchdays Nuevo Fútbol Uruguay — Agentes & Agencias
 import nfuWanderersDepMaldonado from "@/assets/Matchday-NFU-Wanderers-DepMaldonado.png";
 import nfuMiramarPlazaColonia from "@/assets/Matchday-NFU-Miramar-PlazaColonia.png";
@@ -620,6 +623,27 @@ const portfolioItemsBase: PortfolioItemDraft[] = [
     formato: "9:16",
     categorias: ["futbolistas"],
     fechaOrdenFutbolistas: "2026-02-19T19:00:00",
+  },
+  // Matchdays 2026 para Agustín Fernández — Futbolistas
+  {
+    id: "p62",
+    image: fernandezVsLiverpool,
+    category: "Matchday Oficial",
+    player: "Agustín Fernández",
+    context: "Liverpool vs Boston River · Juveniles AUF · Fecha 4",
+    formato: "9:16",
+    categorias: ["futbolistas"],
+    fechaOrdenFutbolistas: "2026-03-27T09:30:00",
+  },
+  {
+    id: "p63",
+    image: fernandezVsWanderers,
+    category: "Matchday Oficial",
+    player: "Agustín Fernández",
+    context: "Boston River vs Wanderers",
+    formato: "9:16",
+    categorias: ["futbolistas"],
+    fechaOrdenFutbolistas: "2026-03-23T10:00:00",
   },
 ];
 
