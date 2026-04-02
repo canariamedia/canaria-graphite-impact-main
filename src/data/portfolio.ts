@@ -44,6 +44,19 @@ import rodriguezVsMVD from "@/assets/Rodriguez-vsMVD.png";
 import santosVsMCT from "@/assets/Santos-vs-MCT.png";
 import sequeiraVsAlbion from "@/assets/Sequeira-vs-Alibon.png";
 import alanizVsUnion from "@/assets/Alaniz-vs-Unión.png";
+// Matchdays Nuevo Fútbol Uruguay — Agentes & Agencias
+import nfuWanderersDepMaldonado from "@/assets/Matchday-NFU-Wanderers-DepMaldonado.png";
+import nfuMiramarPlazaColonia from "@/assets/Matchday-NFU-Miramar-PlazaColonia.png";
+import nfuPaysanduMiramar from "@/assets/Matchday-NFU-Paysandu-Miramar.png";
+import nfuBostonRiverAlbion from "@/assets/Matchday-NFU-BostonRiver-Albion.png";
+import nfuProgresoAlbion from "@/assets/Matchday-NFU-Progreso-Albion.png";
+import nfuCopiapoIquique from "@/assets/Matchday-NFU-Copiapo-Iquique.png";
+import nfuPlazaColoniaRiverPlate from "@/assets/Matchday-NFU-PlazaColonia-RiverPlate.png";
+import nfuDanubioProgreso from "@/assets/Matchday-NFU-Danubio-Progreso.png";
+import nfuPaysanduColon from "@/assets/Matchday-NFU-Paysandu-Colon.png";
+import nfuPenarolAlbion from "@/assets/Matchday-NFU-Penarol-Albion.png";
+import nfuJuventudAlbion from "@/assets/Matchday-NFU-Juventud-Albion.png";
+import nfuProgresoBostonRiver from "@/assets/Matchday-NFU-Progreso-BostonRiver.png";
 
 export type CategoriaPortfolio =
   | "futbolistas"
@@ -59,6 +72,11 @@ export type PortfolioItem = {
   context: string;
   categorias: CategoriaPortfolio[];
   formato: FormatoImagen;
+};
+
+/** Borrador de item: admite `categorias` para forzar sección sin depender del índice */
+type PortfolioItemDraft = Omit<PortfolioItem, "categorias"> & {
+  categorias?: CategoriaPortfolio[];
 };
 
 /**
@@ -91,7 +109,7 @@ export function normalizarCategorias(
  * - "Estas van a Futbolistas y Agentes" → categorias: ["futbolistas", "agentes"]
  */
 // Items base del portfolio (sin normalizar)
-const portfolioItemsBase: Omit<PortfolioItem, "categorias">[] = [
+const portfolioItemsBase: PortfolioItemDraft[] = [
   {
     id: "p1",
     image: portfolio1,
@@ -432,24 +450,139 @@ const portfolioItemsBase: Omit<PortfolioItem, "categorias">[] = [
     context: "Banfield vs Unión · Liga Profesional Argentina",
     formato: "9:16",
   },
+  // Matchdays Nuevo Fútbol Uruguay — Agencias y Representantes
+  {
+    id: "p46",
+    image: nfuWanderersDepMaldonado,
+    category: "Agencias y Representantes",
+    player: "Wanderers vs Dep. Maldonado",
+    context: "Matchday para Nuevo Fútbol Uruguay",
+    formato: "9:16",
+    categorias: ["agentes"],
+  },
+  {
+    id: "p47",
+    image: nfuMiramarPlazaColonia,
+    category: "Agencias y Representantes",
+    player: "Miramar Misiones vs Plaza Colonia",
+    context: "Matchday para Nuevo Fútbol Uruguay",
+    formato: "9:16",
+    categorias: ["agentes"],
+  },
+  {
+    id: "p48",
+    image: nfuPaysanduMiramar,
+    category: "Agencias y Representantes",
+    player: "Paysandú vs Miramar Misiones",
+    context: "Matchday para Nuevo Fútbol Uruguay",
+    formato: "9:16",
+    categorias: ["agentes"],
+  },
+  {
+    id: "p49",
+    image: nfuBostonRiverAlbion,
+    category: "Agencias y Representantes",
+    player: "Boston River vs Albion",
+    context: "Matchday para Nuevo Fútbol Uruguay",
+    formato: "9:16",
+    categorias: ["agentes"],
+  },
+  {
+    id: "p50",
+    image: nfuProgresoAlbion,
+    category: "Agencias y Representantes",
+    player: "Progreso vs Albion",
+    context: "Matchday para Nuevo Fútbol Uruguay",
+    formato: "9:16",
+    categorias: ["agentes"],
+  },
+  {
+    id: "p51",
+    image: nfuCopiapoIquique,
+    category: "Agencias y Representantes",
+    player: "Copiapó vs Deportes Iquique",
+    context: "Matchday para Nuevo Fútbol Uruguay",
+    formato: "9:16",
+    categorias: ["agentes"],
+  },
+  {
+    id: "p52",
+    image: nfuPlazaColoniaRiverPlate,
+    category: "Agencias y Representantes",
+    player: "Plaza Colonia vs River Plate",
+    context: "Matchday para Nuevo Fútbol Uruguay",
+    formato: "9:16",
+    categorias: ["agentes"],
+  },
+  {
+    id: "p53",
+    image: nfuDanubioProgreso,
+    category: "Agencias y Representantes",
+    player: "Danubio vs Progreso",
+    context: "Matchday para Nuevo Fútbol Uruguay",
+    formato: "9:16",
+    categorias: ["agentes"],
+  },
+  {
+    id: "p54",
+    image: nfuPaysanduColon,
+    category: "Agencias y Representantes",
+    player: "Paysandú FC vs Colón",
+    context: "Matchday para Nuevo Fútbol Uruguay",
+    formato: "9:16",
+    categorias: ["agentes"],
+  },
+  {
+    id: "p55",
+    image: nfuPenarolAlbion,
+    category: "Agencias y Representantes",
+    player: "Peñarol vs Albion",
+    context: "Matchday para Nuevo Fútbol Uruguay",
+    formato: "9:16",
+    categorias: ["agentes"],
+  },
+  {
+    id: "p56",
+    image: nfuJuventudAlbion,
+    category: "Agencias y Representantes",
+    player: "Juventud vs Albion",
+    context: "Matchday para Nuevo Fútbol Uruguay",
+    formato: "9:16",
+    categorias: ["agentes"],
+  },
+  {
+    id: "p57",
+    image: nfuProgresoBostonRiver,
+    category: "Agencias y Representantes",
+    player: "Progreso vs Boston River",
+    context: "Matchday para Nuevo Fútbol Uruguay",
+    formato: "9:16",
+    categorias: ["agentes"],
+  },
 ];
 
 // Portfolio items normalizados con sus categorías específicas
 export const portfolioItems: PortfolioItem[] = portfolioItemsBase.map((item, index) => {
+  const { categorias: categoriasExplicitas, ...rest } = item;
+
   // Los items p1-p3, p5-p10, p15-p24 son de futbolistas
   // Los items p4 (Claw Sports), p11-p14 (Footwork Agency) y p25-p31 (Lucas Jorge - Claw Sports) son de agentes
   // p4 = index 3, p11-p14 = index 9-12, p25-p31 = index 24-30
   // Items de Mateo Carrizo (p32-p33, index 31-32) y Esteban Da Silva (p34-p35, index 33-34) son SOLO futbolistas
   const esItemAgente = index === 3 || (index >= 9 && index < 13) || (index >= 24 && index < 31); // p4 (index 3), p11-p14 (index 9-12), p25-p31 (index 24-30)
-  
+
   // Forzar que items de Mateo Carrizo y Esteban Da Silva sean SOLO futbolistas
   const esCarrizoODaSilva = item.player === "Mateo Carrizo" || item.player === "Esteban Da Silva";
-  
+
+  const categorias = categoriasExplicitas?.length
+    ? normalizarCategorias(categoriasExplicitas)
+    : normalizarCategorias(
+        esCarrizoODaSilva ? ["futbolistas"] : (esItemAgente ? ["agentes"] : ["futbolistas"])
+      );
+
   return {
-    ...item,
-    categorias: normalizarCategorias(
-      esCarrizoODaSilva ? ["futbolistas"] : (esItemAgente ? ["agentes"] : ["futbolistas"])
-    ),
+    ...rest,
+    categorias,
   };
 });
 
