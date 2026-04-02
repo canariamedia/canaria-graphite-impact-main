@@ -490,7 +490,7 @@ const portfolioItemsBase: PortfolioItemDraft[] = [
     player: "Boston River vs Albion",
     context: "Matchday para Nuevo Fútbol Uruguay",
     formato: "9:16",
-    categorias: ["agentes"],
+    categorias: ["futbolistas"],
     fechaOrdenAgentes: "2026-02-21T17:00:00",
   },
   {
