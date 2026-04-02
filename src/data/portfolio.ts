@@ -52,6 +52,9 @@ import alanizVsGuarani26Feb from "@/assets/Alaniz-vs-Guarani-2cf90c17-cef8-47f3-
 // Matchdays 2026 para Agustín Fernández (Futbolistas)
 import fernandezVsLiverpool from "@/assets/Fernandez-vs-Liverpool-d133d88c-030d-4968-9e93-ff37f279f78b.png";
 import fernandezVsWanderers from "@/assets/Fernandez-vs-Wanderers-1baac29a-594d-4d20-b63b-d4c2092343a0.png";
+// Matchdays 2026 para Gastón Rodríguez (Futbolistas)
+import rodriguezGKTorqueVsNacional from "@/assets/Rodriguez-vs-Nacional-d12459cb-ba40-4e41-8125-3bd0965a9fe1.png";
+import rodriguezGKTorqueVsDepMaldonado from "@/assets/Rodriguez-vs-Deportivo-Maldonado-8041a501-0dc9-4586-9e9c-ee049cf04e72.png";
 // Matchdays Nuevo Fútbol Uruguay — Agentes & Agencias
 import nfuWanderersDepMaldonado from "@/assets/Matchday-NFU-Wanderers-DepMaldonado.png";
 import nfuMiramarPlazaColonia from "@/assets/Matchday-NFU-Miramar-PlazaColonia.png";
@@ -644,6 +647,27 @@ const portfolioItemsBase: PortfolioItemDraft[] = [
     formato: "9:16",
     categorias: ["futbolistas"],
     fechaOrdenFutbolistas: "2026-03-23T10:00:00",
+  },
+  // Matchdays 2026 para Gastón Rodríguez — Futbolistas
+  {
+    id: "p64",
+    image: rodriguezGKTorqueVsNacional,
+    category: "Matchday Oficial",
+    player: "Gastón Rodríguez",
+    context: "MVD City Torque vs Nacional · Liga AUF · Fecha 9",
+    formato: "9:16",
+    categorias: ["futbolistas"],
+    fechaOrdenFutbolistas: "2026-03-28T19:30:00",
+  },
+  {
+    id: "p65",
+    image: rodriguezGKTorqueVsDepMaldonado,
+    category: "Matchday Oficial",
+    player: "Gastón Rodríguez",
+    context: "Deportivo Maldonado vs MVD City Torque",
+    formato: "9:16",
+    categorias: ["futbolistas"],
+    fechaOrdenFutbolistas: "2026-03-24T14:00:00",
   },
 ];
 
