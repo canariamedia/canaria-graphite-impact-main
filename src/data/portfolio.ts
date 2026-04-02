@@ -44,6 +44,11 @@ import rodriguezVsMVD from "@/assets/Rodriguez-vsMVD.png";
 import santosVsMCT from "@/assets/Santos-vs-MCT.png";
 import sequeiraVsAlbion from "@/assets/Sequeira-vs-Alibon.png";
 import alanizVsUnion from "@/assets/Alaniz-vs-Unión.png";
+// Matchdays 2026 para Agustín Alaniz (Futbolistas)
+import alanizVsGuarani19Feb from "@/assets/AlanizvsGuarani-49b1a7c5-ddd0-4b26-b34b-e67247287371.png";
+import alanizVsBostonRiver29Mar from "@/assets/Alaniz-vs-Boston-River-9e0dbff9-5340-426c-9ac9-7b3b1a17e244.png";
+import alanizVsAlbion22Mar from "@/assets/Alaniz-vs-Albion-a2be3364-67cf-4d78-903e-42663252a6a8.png";
+import alanizVsGuarani26Feb from "@/assets/Alaniz-vs-Guarani-2cf90c17-cef8-47f3-80ac-40efa4ea4772.png";
 // Matchdays Nuevo Fútbol Uruguay — Agentes & Agencias
 import nfuWanderersDepMaldonado from "@/assets/Matchday-NFU-Wanderers-DepMaldonado.png";
 import nfuMiramarPlazaColonia from "@/assets/Matchday-NFU-Miramar-PlazaColonia.png";
@@ -72,6 +77,8 @@ export type PortfolioItem = {
   context: string;
   categorias: CategoriaPortfolio[];
   formato: FormatoImagen;
+  /** Fecha u hora del partido según el diseño (ISO 8601). Solo usada para ordenar la sección Futbolistas. */
+  fechaOrdenFutbolistas?: string;
   /** Fecha u hora del partido según el diseño (ISO 8601). Solo usada para ordenar la sección Agentes & Agencias (más reciente primero). */
   fechaOrdenAgentes?: string;
 };
@@ -573,6 +580,47 @@ const portfolioItemsBase: PortfolioItemDraft[] = [
     categorias: ["agentes"],
     fechaOrdenAgentes: "2026-03-22T16:00:00",
   },
+  // Matchdays 2026 para Agustín Alaniz — Futbolistas
+  {
+    id: "p58",
+    image: alanizVsBostonRiver29Mar,
+    category: "Matchday Oficial",
+    player: "Agustín Alaniz",
+    context: "Juventud vs Boston River",
+    formato: "9:16",
+    categorias: ["futbolistas"],
+    fechaOrdenFutbolistas: "2026-03-29T13:00:00",
+  },
+  {
+    id: "p59",
+    image: alanizVsAlbion22Mar,
+    category: "Matchday Oficial",
+    player: "Agustín Alaniz",
+    context: "Juventud vs Albion",
+    formato: "9:16",
+    categorias: ["futbolistas"],
+    fechaOrdenFutbolistas: "2026-03-22T10:00:00",
+  },
+  {
+    id: "p60",
+    image: alanizVsGuarani26Feb,
+    category: "Matchday Oficial",
+    player: "Agustín Alaniz",
+    context: "Guaraní vs Juventud",
+    formato: "9:16",
+    categorias: ["futbolistas"],
+    fechaOrdenFutbolistas: "2026-02-26T19:00:00",
+  },
+  {
+    id: "p61",
+    image: alanizVsGuarani19Feb,
+    category: "Matchday Oficial",
+    player: "Agustín Alaniz",
+    context: "Juventud vs Guaraní",
+    formato: "9:16",
+    categorias: ["futbolistas"],
+    fechaOrdenFutbolistas: "2026-02-19T19:00:00",
+  },
 ];
 
 // Portfolio items normalizados con sus categorías específicas
@@ -713,6 +761,21 @@ function ordenarAgentesPorFechaReciente(items: PortfolioItem[]): PortfolioItem[]
 }
 
 /**
+ * Orden para Futbolistas: más reciente primero (fecha/hora del flyer).
+ * Items sin `fechaOrdenFutbolistas` quedan al final.
+ */
+function ordenarFutbolistasPorFechaReciente(items: PortfolioItem[]): PortfolioItem[] {
+  return [...items].sort((a, b) => {
+    const fa = a.fechaOrdenFutbolistas;
+    const fb = b.fechaOrdenFutbolistas;
+    if (fa && fb) return fb.localeCompare(fa);
+    if (fa && !fb) return -1;
+    if (!fa && fb) return 1;
+    return a.id.localeCompare(b.id);
+  });
+}
+
+/**
  * Obtener items filtrados por categoría
  */
 export const obtenerItemsPorCategoria = (
@@ -721,6 +784,9 @@ export const obtenerItemsPorCategoria = (
   const items = portfolioItems.filter((item) => item.categorias.includes(categoria));
   if (categoria === "agentes") {
     return ordenarAgentesPorFechaReciente(items);
+  }
+  if (categoria === "futbolistas") {
+    return ordenarFutbolistasPorFechaReciente(items);
   }
   return items;
 };
