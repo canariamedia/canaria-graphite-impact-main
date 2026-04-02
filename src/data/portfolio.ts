@@ -55,6 +55,12 @@ import fernandezVsWanderers from "@/assets/Fernandez-vs-Wanderers-1baac29a-594d-
 // Matchdays 2026 para Gastón Rodríguez (Futbolistas)
 import rodriguezGKTorqueVsNacional from "@/assets/Rodriguez-vs-Nacional-d12459cb-ba40-4e41-8125-3bd0965a9fe1.png";
 import rodriguezGKTorqueVsDepMaldonado from "@/assets/Rodriguez-vs-Deportivo-Maldonado-8041a501-0dc9-4586-9e9c-ee049cf04e72.png";
+// Matchdays 2026 para Nahuel Da Silva (Futbolistas)
+import nahuelDaSilvaVsLiverpool2026 from "@/assets/Nahuel-Da-Silva-2026-vs-Liverpool-e2c40439.png";
+import nahuelDaSilvaVsDefensorSud2026 from "@/assets/Nahuel-Da-Silva-2026-vs-Defensor-Sudamericana-8eb368df.png";
+import nahuelDaSilvaVsDefensorLiga2026 from "@/assets/Nahuel-Da-Silva-2026-vs-Defensor-Liga-69e55976.png";
+import nahuelDaSilvaVsWanderers2026 from "@/assets/Nahuel-Da-Silva-2026-vs-Wanderers-4113b713.png";
+import nahuelDaSilvaVsPenarol2026 from "@/assets/Nahuel-Da-Silva-2026-vs-Penarol-c92da7dc.png";
 // Matchdays Nuevo Fútbol Uruguay — Agentes & Agencias
 import nfuWanderersDepMaldonado from "@/assets/Matchday-NFU-Wanderers-DepMaldonado.png";
 import nfuMiramarPlazaColonia from "@/assets/Matchday-NFU-Miramar-PlazaColonia.png";
@@ -668,6 +674,57 @@ const portfolioItemsBase: PortfolioItemDraft[] = [
     formato: "9:16",
     categorias: ["futbolistas"],
     fechaOrdenFutbolistas: "2026-03-24T14:00:00",
+  },
+  // Matchdays 2026 para Nahuel Da Silva — Futbolistas
+  {
+    id: "p66",
+    image: nahuelDaSilvaVsLiverpool2026,
+    category: "Matchday Oficial",
+    player: "Nahuel Da Silva",
+    context: "Liverpool vs MVD City Torque · Liga AUF · Fecha 6",
+    formato: "9:16",
+    categorias: ["futbolistas"],
+    fechaOrdenFutbolistas: "2026-03-16T20:00:00",
+  },
+  {
+    id: "p67",
+    image: nahuelDaSilvaVsDefensorSud2026,
+    category: "Matchday Oficial",
+    player: "Nahuel Da Silva",
+    context: "MVD City Torque vs Defensor · Copa Sudamericana · 1.ª fase",
+    formato: "9:16",
+    categorias: ["futbolistas"],
+    fechaOrdenFutbolistas: "2026-03-03T19:00:00",
+  },
+  {
+    id: "p68",
+    image: nahuelDaSilvaVsDefensorLiga2026,
+    category: "Matchday Oficial",
+    player: "Nahuel Da Silva",
+    context: "MVD City Torque vs Defensor Sporting · Liga AUF · Fecha 4",
+    formato: "9:16",
+    categorias: ["futbolistas"],
+    fechaOrdenFutbolistas: "2026-02-26T20:00:00",
+  },
+  {
+    id: "p69",
+    image: nahuelDaSilvaVsWanderers2026,
+    category: "Matchday Oficial",
+    player: "Nahuel Da Silva",
+    context: "Wanderers vs MVD City Torque · Liga AUF · Fecha 3",
+    formato: "9:16",
+    categorias: ["futbolistas"],
+    fechaOrdenFutbolistas: "2026-02-22T09:45:00",
+  },
+  {
+    id: "p70",
+    image: nahuelDaSilvaVsPenarol2026,
+    category: "Matchday Oficial",
+    player: "Nahuel Da Silva",
+    context: "Peñarol vs MVD City Torque",
+    formato: "9:16",
+    categorias: ["futbolistas"],
+    fechaOrdenFutbolistas: "2026-02-07T20:30:00",
   },
 ];
 
